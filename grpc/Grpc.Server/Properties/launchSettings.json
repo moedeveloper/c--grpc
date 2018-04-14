@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Grpc.Server": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\demos"
+    }
+  }
+}

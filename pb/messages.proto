@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "Messages";
+
+message Node {
+    int32 id = 1;
+    string label = 2;
+}
+
+message GetAllRequest {}
+
+message GetNodeByIdRequest {
+    int32 id = 1;
+}
+
+message NodeRequest {
+    Node node = 1;
+}
+
+message NodeResponse {
+    Node node = 1;
+}
+
+service NodeService {
+    rpc GetAll(GetAllRequest) returns (stream NodeResponse); // repeated could be used instead of stream to get a collection of employee responses but repeated is not supported by rpc calls!
+    rpc GetNodeById(GetNodeByIdRequest) returns (NodeResponse);
+}
